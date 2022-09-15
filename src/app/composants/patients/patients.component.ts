@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DonneesService } from '../../services/donnees.service';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-patients',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientsComponent implements OnInit {
 
-  constructor() { }
+  //Définition de la variable contenant le patient
+  patient: any;
+
+  constructor(private donneesService: DonneesService) {
+
+   }
 
   ngOnInit(): void {
+    this.patient = this.donneesService.getPatients().subscribe((data)  => {
+      this.patient = data;
+
+      console.log(this.patient);
+    });
   }
 
 }

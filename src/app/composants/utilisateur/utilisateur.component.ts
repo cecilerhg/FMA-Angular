@@ -8,7 +8,8 @@ import { DonneesService } from '../../services/donnees.service';
 })
 export class UtilisateurComponent implements OnInit {
 
-  //Variables dynamiques 
+  //Variables dynamiques
+  //Définition de la variable qui va contenir l'utilisateur
   practitioner: any;
   
   constructor(private donneesService : DonneesService) { 
@@ -18,7 +19,9 @@ export class UtilisateurComponent implements OnInit {
   ngOnInit(): void {
     this.practitioner = this.donneesService.getPractitien().subscribe((data) => {
       this.practitioner = data;
-    });;
+
+      console.log(this.practitioner);
+    });
   }
 
 }
