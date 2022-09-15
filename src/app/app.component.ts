@@ -1,3 +1,6 @@
+//Fichiers typeScript
+//Contient des variables dynamiques
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +10,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FMA';
+  test = 'variable de test';
 }
