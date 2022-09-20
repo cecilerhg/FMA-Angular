@@ -8,18 +8,20 @@ import { DonneesService } from '../../services/donnees.service';
 })
 export class UtilisateurComponent implements OnInit {
 
-  //Variables dynamiques 
-  nom: string;
-  age: number;
+  //Variables dynamiques
+  //Définition de la variable qui va contenir l'utilisateur
+  practitioner: any;
   
-  constructor() { 
-    this.nom = "Camant";
-    this.age = 52;
+  constructor(private donneesService : DonneesService) { 
 
   }
 
   ngOnInit(): void {
-    //Défnition des fonctions, onClick() par exemple
+    this.practitioner = this.donneesService.getPractitien().subscribe((data) => {
+      this.practitioner = data;
+
+      console.log(this.practitioner);
+    });
   }
 
 }
