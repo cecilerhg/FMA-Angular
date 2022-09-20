@@ -12,6 +12,8 @@ import { PatientsComponent } from './composants/patients/patients.component';
 import { EvenementsComponent } from './composants/evenements/evenements.component';
 import { ObservationsComponent } from './composants/observations/observations.component';
 
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 @NgModule({
   declarations: [ //Contient les composants
     AppComponent, UtilisateurComponent, PatientsComponent, EvenementsComponent, ObservationsComponent
@@ -20,7 +22,8 @@ import { ObservationsComponent } from './composants/observations/observations.co
     BrowserModule,
     AppRoutingModule, 
     FormsModule,
-    HttpClientModule
+    HttpClientModule, 
+    MatFormFieldModule
   ],
   //Contient les services
   providers: [DonneesService],
