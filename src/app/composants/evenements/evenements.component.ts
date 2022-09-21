@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { DonneesService } from 'app/services/donnees.service';
+import { ChangeDetectorRef } from '@angular/core';  
 
 @Component({
   selector: 'app-evenements',
   templateUrl: './evenements.component.html',
   styleUrls: ['./evenements.component.css']
 })
-export class EvenementsComponent implements OnInit {
+export class EvenementsComponent implements OnInit, OnChanges {
 
+  @Input() patient: any;
   conditions: any;
 
   constructor(private donneeService: DonneesService) { }
@@ -19,4 +21,9 @@ export class EvenementsComponent implements OnInit {
     });
   }
 
+  ngOnChanges() {
+    console.log("change patient pour evenement");
+    this.ngOnInit();
+  } 
+ 
 }

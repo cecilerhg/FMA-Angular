@@ -36,6 +36,7 @@ export class DonneesService {
   //Méthode GET PATIENT ID (lors du click sur un patient)
   setPatient(id: any) {
     localStorage.setItem('currentPatient', id);
+    this.currentPatient = id;
     return this.http.get(this.BASE_URL + "patient/" + id);
   }
 
@@ -45,6 +46,7 @@ export class DonneesService {
 
   //Méthode GET PATIENT ID (lors du click sur un patient)
   getConditionForCurrentPatient() {
+    console.log("currentPatient", this.currentPatient);
     return this.http.get(this.BASE_URL + "condition?subject.reference=Patient/" + this.currentPatient);
   }
 
