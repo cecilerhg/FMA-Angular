@@ -1,15 +1,18 @@
+<div>
 <h1>BLOC PATIENT</h1>
 
-<p>
-    Bonjour patients </p> 
-   
+<div class="liste_patients">
+    <p> Choisissez votre patient :</p> 
 
-    <ul>
-        <!-- Boucle qui affiche les patients en dynamique-->
-        <li *ngFor="let pat of patient">
-            <button (click)="getPatientFromId(pat.id)">
+    <mat-form-field appearance="fill">
+        
+        <mat-select>
+            <mat-option *ngFor="let pat of patient" [value]="pat.name[0].given + pat.name[0].family" (click)="getPatientFromId(pat.id)">
                 {{ pat.name[0].given }} {{ pat.name[0].family }}
-            </button>
-        </li>   
-    </ul>
-   
+            </mat-option>
+        </mat-select>
+
+    </mat-form-field>
+</div>
+
+</div>

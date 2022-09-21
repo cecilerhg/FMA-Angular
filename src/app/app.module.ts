@@ -13,6 +13,9 @@ import { EvenementsComponent } from './composants/evenements/evenements.componen
 import { ObservationsComponent } from './composants/observations/observations.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [ //Contient les composants
@@ -23,7 +26,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     AppRoutingModule, 
     FormsModule,
     HttpClientModule, 
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule,
+    BrowserAnimationsModule
   ],
   //Contient les services
   providers: [DonneesService],

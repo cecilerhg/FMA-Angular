@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DonneesService } from '../../services/donnees.service';
 import { ThisReceiver } from '@angular/compiler';
+import {MatSelectModule} from '@angular/material/select';
 
 @Component({
   selector: 'app-patients',
@@ -27,5 +28,4 @@ export class PatientsComponent implements OnInit {
     console.log("idpatient ", id);
     return id;
   }
-
 }
