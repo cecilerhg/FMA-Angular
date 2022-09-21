@@ -1,0 +1,19 @@
+/*#event{
+   
+    border-radius: 50px;
+    left: 2%;
+    top: 150%;
+    width: 70%;
+    height: 60%;
+    background-color: rgba(0, 119, 182, 0.6);
+}
+
+#img{
+   
+    right: 0px;
+    top: 115%;
+    width: 1000px;
+    z-index: -2;
+    /*background: url("../../../assets/docteur-event.jpg") contain no-repeat;
+}
+*/

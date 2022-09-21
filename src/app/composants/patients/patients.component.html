@@ -1,23 +1,27 @@
-<h1>BLOC PATIENT</h1>
-<div class="liste_patients">
-    <!--<p> Choisissez votre patient :</p> -->
-    <div *ngIf="patients">
-        <mat-form-field appearance="fill">
-            <mat-label>Patients</mat-label>
-            <mat-select>
-                <mat-option *ngFor="let pat of patients" [value]="pat.name[0].given + pat.name[0].family"
-                    (click)="selectPatient(pat.id)">
-                    {{ pat.name[0].given }} {{ pat.name[0].family }}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-    </div>
+<mat-card id="card-patient">
+    <div id="infoPatient">
+        <h1>Fiche Patient</h1>
+        <div id="photo"></div>
 
-    <h2>Patient selectionné</h2>
-    <div *ngIf="patient">
-        {{ patient.name[0].given }} {{ patient.name[0].family }}
-        <div *ngIf="patient">
-            <app-evenements [patient]="patient.id"></app-evenements>
+        <div class="liste_patients">
+            <!--<p> Choisissez votre patient :</p> -->
+            <div *ngIf="patients">
+                <mat-form-field appearance="fill">
+                    <mat-label>Patients</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let pat of patients" [value]="pat.name[0].given + pat.name[0].family"
+                            (click)="selectPatient(pat.id)">
+                            {{ pat.name[0].given }} {{ pat.name[0].family }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div *ngIf="patient">
+                <div *ngIf="patient">
+                    <app-evenements [patient]="patient.id"></app-evenements>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</mat-card>

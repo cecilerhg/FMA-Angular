@@ -1,11 +1,19 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <h1>Quoi d'neuf Docteur?</h1>
+        <img id="logo" src=".\assets\logo.png" alt="logo"/>
+        <button class="button type2">Info Patient</button>
+        <button class="button type2">Evènements</button>
+        <button class="button type2">Compte Rendu</button>
+        <button id="parametres"></button>
     </mat-toolbar-row>
 </mat-toolbar>
 
+<div id="container">
+
 <app-utilisateur></app-utilisateur>
 
-<app-patients></app-patients>
+<app-patients></app-patients> 
 
 <app-observations></app-observations>
+
+</div>

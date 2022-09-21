@@ -1,5 +1,8 @@
-<div>
-    <h1>Module événements</h1>
+<mat-card  id="card-evenement">
+<div id="event">
+
+<h1>Module événements</h1>
+
 </div>
 <div *ngIf="conditions">
     <div *ngFor="let condition of conditions">
@@ -14,3 +17,5 @@
 <div *ngIf="!conditions || conditions.length == 0">
     Pas de d'événements pour le patient sélectionné !
 </div>
+<img id="img" height="250px" src="../../../assets/docteur-event.jpg">
+</mat-card>

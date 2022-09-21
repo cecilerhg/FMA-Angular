@@ -1,19 +1,24 @@
-<div>
-    <h1>Module observations</h1>
-    <h2>Créer une observation / condition :</h2>
+<mat-card id="card-observation">
 
-    <mat-form-field appearance="fill">
-        <mat-label>Date</mat-label>
-        <input [(ngModel)]="condition.recordedDate" matInput [matDatepicker]="picker">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
+    <div>
+        <h1>Module observations</h1>
+        <h2>Créer une observation / condition :</h2>
 
-    <mat-form-field appearance="fill">
-        <mat-label>Commentaire</mat-label>
-        <textarea [(ngModel)]="condition.note[0].text" matInput placeholder="Entrez commentaire..."></textarea>
-    </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Date</mat-label>
+            <input [(ngModel)]="condition.recordedDate" matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
 
-    <button  mat-button color="primary" (click)="creerObservation()">Créer observation</button>
-</div>
+        <mat-form-field appearance="fill">
+            <mat-label>Commentaire</mat-label>
+            <textarea [(ngModel)]="condition.note[0].text" matInput placeholder="Entrez commentaire..."></textarea>
+        </mat-form-field>
+        <br />
+        <button mat-button color="primary" (click)="creerObservation()">Créer observation</button>
+    </div>
+
+    <img height="250px" id="img415" src="../../../assets/415.jpg">
+</mat-card>

@@ -1,2 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+    overflow-x: hidden;
+}
+
+html,
+body {
+    background: #40E0D0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#container  {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+#card-utilisateur {
+    display: flex;
+    width: 45%;
+    float: right;
+    margin: 35px 15px 0px 0px;
+    background: rgba(255,255,255,0.7);
+}
+
+#card-patient {
+    display: flex;
+    width: 100%;
+    background: rgba(255,255,255,0.7);
+}
+
+#card-evenement {
+    display: flex;
+    width: 100%;
+    background: rgba(255,255,255,0.7);
+}
+
+#card-observation {
+    display: flex;
+    width: 50%;
+    margin: 35px 15px 0px 0px;
+    background: rgba(255,255,255,0.7);
+}
