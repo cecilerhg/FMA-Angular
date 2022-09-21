@@ -1,16 +1,16 @@
 <div>
-
-<h1>Module événements</h1>
-
-<p>Données à récupérer de l'autre groupe!</p>
-<p>Attention: il faut faire un filtre avec le patient présélectionné par le médecin (par son ID)</p>
-
+    <h1>Module événements</h1>
 </div>
-
-<div *ngFor="let condition of conditions">
-    Référence: {{ condition.id }}
+<div *ngIf="conditions">
+    <div *ngFor="let condition of conditions">
+        <div *ngIf="condition.recordedDate && condition.code && condition.code.coding && condition.note">
+            Evénement reporté le : {{ condition.recordedDate }}.
+            Incident : {{ condition.code.coding[0].display }}.
+            Notes supplémentaires : {{ condition.note[0].text }}
+        </div>
+    </div>
 </div>
 
 <div *ngIf="!conditions || conditions.length == 0">
-    Pas de conditions pour le patient sélectionné
+    Pas de d'événements pour le patient sélectionné !
 </div>

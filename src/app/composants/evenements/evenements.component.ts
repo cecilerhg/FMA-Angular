@@ -7,7 +7,7 @@ import { ChangeDetectorRef } from '@angular/core';
   templateUrl: './evenements.component.html',
   styleUrls: ['./evenements.component.css']
 })
-export class EvenementsComponent implements OnInit, OnChanges {
+export class EvenementsComponent implements OnInit, OnChanges, OnChanges {
 
   @Input() patient: any;
   conditions: any;

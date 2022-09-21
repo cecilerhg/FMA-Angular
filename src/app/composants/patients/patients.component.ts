@@ -22,7 +22,7 @@ export class PatientsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.patient = this.donneesService.getPatients().subscribe((data)  => {
+    this.donneesService.getPatients().subscribe((data)  => {
       this.patients = data;
       console.log(this.patient);
     });

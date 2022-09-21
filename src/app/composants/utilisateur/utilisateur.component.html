@@ -1,6 +1,7 @@
 <div>
-<h1>BLOC PRACTITIONER</h1>
+    <h1>BLOC PRACTITIONER</h1>
 
-<p>
-    Bienvenue Dr {{ practitioner.name[0].given[0] }} {{ practitioner.name[0].family }}
+    <p *ngIf="practitioner">
+        Bienvenue Dr {{ practitioner.name[0].given[0] }} {{ practitioner.name[0].family }}
+    </p>
 </div>

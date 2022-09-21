@@ -13,8 +13,16 @@ import { EvenementsComponent } from './composants/evenements/evenements.componen
 import { ObservationsComponent } from './composants/observations/observations.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatButtonModule } from '@angular/material/button';
+
+import {MatTableModule} from '@angular/material/table';
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -25,12 +33,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [ //Contient les modules 
     BrowserModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     FormsModule,
-    HttpClientModule, 
+    HttpClientModule,
     MatFormFieldModule,
+    MatInputModule,
     MatSelectModule,
     MatToolbarModule,
+    MatDatepickerModule,
+    MatSnackBarModule,
+    MatNativeDateModule,
+    MatButtonModule,
+    MatTableModule,
     BrowserAnimationsModule
   ],
   //Contient les services

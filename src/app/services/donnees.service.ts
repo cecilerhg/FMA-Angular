@@ -56,7 +56,9 @@ export class DonneesService {
   }
 
   //Méthode POST observations (envoyer les observations du médecin concernant le patient sélectionné) 
-
+  postObservations(condition: any) {
+    return this.http.post(this.BASE_URL +"condition", condition);
+  }
 
   //Méthode PUT (modifier ?)
 }
