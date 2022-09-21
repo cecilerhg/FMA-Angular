@@ -12,10 +12,7 @@ export class PatientsComponent implements OnInit {
   //Définition de la variable contenant le patient
   patient: any;
 
-  patients: { "patient": [] };
-
   constructor(private donneesService: DonneesService) {
-    this.patients = { "patient": [] };
    }
 
   ngOnInit(): void {

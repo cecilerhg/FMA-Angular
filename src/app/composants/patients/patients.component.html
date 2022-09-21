@@ -2,16 +2,12 @@
 
 <p>
     Bonjour patients </p> 
-    <ul>
-        <li>
-            {{ patient[0].name[0].given[0] }} {{ patient[0].name[0].family }}
-        </li>
-        <li>
-            {{ patient[1].name[0].given[0] }} {{ patient[1].name[0].family }}
-        </li>
-        <li>
-            {{ patient[2].name[0].given[0] }} {{ patient[2].name[0].family }}
-        </li>
-    </ul>
+   
 
-    
+    <ul>
+        <!-- Boucle qui affiche les patients en dynamique-->
+        <li *ngFor="let pat of patient">
+            {{ pat.name[0].given }} {{ pat.name[0].family }}
+        </li>   
+    </ul>
+   
