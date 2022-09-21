@@ -6,3 +6,11 @@
 <p>Attention: il faut faire un filtre avec le patient présélectionné par le médecin (par son ID)</p>
 
 </div>
+
+<div *ngFor="let condition of conditions">
+    {{ condition.id }}
+</div>
+
+<div *ngIf="!conditions || conditions.length == 0">
+    Pas de conditions pour le patient sélectionné
+</div>

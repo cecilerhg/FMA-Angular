@@ -13,7 +13,9 @@ import { EvenementsComponent } from './composants/evenements/evenements.componen
 import { ObservationsComponent } from './composants/observations/observations.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -28,6 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule, 
     MatFormFieldModule,
     MatSelectModule,
+    MatToolbarModule,
     BrowserAnimationsModule
   ],
   //Contient les services

@@ -4,15 +4,20 @@
 <div class="liste_patients">
     <p> Choisissez votre patient :</p> 
 
-    <mat-form-field appearance="fill">
-        
+<mat-form-field appearance="fill">
+    <mat-label>Patients</mat-label>
         <mat-select>
-            <mat-option *ngFor="let pat of patient" [value]="pat.name[0].given + pat.name[0].family" (click)="getPatientFromId(pat.id)">
+            <mat-option *ngFor="let pat of patients" [value]="pat.name[0].given + pat.name[0].family" (click)="selectPatient(pat.id)">
                 {{ pat.name[0].given }} {{ pat.name[0].family }}
             </mat-option>
         </mat-select>
+</mat-form-field>
 
-    </mat-form-field>
+<h2>Patient selectionné</h2>
+<p>
+    {{ patient.id }}
+</p>
+
 </div>
 
 </div>

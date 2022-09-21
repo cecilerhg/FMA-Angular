@@ -1,13 +1,13 @@
 //Ajouter les services dans :
-  // - app.module.ts (import)
-  // - utilisateur.component.ts (import + constructeur)
-  // - constructor : private donnees: DonneesService
+// - app.module.ts (import)
+// - utilisateur.component.ts (import + constructeur)
+// - constructor : private donnees: DonneesService
 
-  //Sert à importer les données une seule fois et à les réutiliser sur notre site 
-  //par une API par exemple
+//Sert à importer les données une seule fois et à les réutiliser sur notre site 
+//par une API par exemple
 
-  //Lien pour rechercher les patients de notre docteur :
-  //https://fhir.alliance4u.io/api/patient?generalPractitioner.reference=6321f14fd83022001917f14f 
+//Lien pour rechercher les patients de notre docteur :
+//https://fhir.alliance4u.io/api/patient?generalPractitioner.reference=6321f14fd83022001917f14f 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -17,27 +17,39 @@ import { HttpClient } from '@angular/common/http';
 export class DonneesService {
 
   BASE_URL = "https://fhir.alliance4u.io/api/";
+  currentPatient: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.currentPatient = localStorage.getItem('currentPatient');
+  }
 
   //Méthode GET PRACTITIONER
-  getPractitien(){
+  getPractitien() {
     return this.http.get(this.BASE_URL + "practitioner/6321f14fd83022001917f14f");
   }
 
   //Méthode GET PATIENTS (appartenant à notre practitioner)
-  getPatients(){
+  getPatients() {
     return this.http.get(this.BASE_URL + "patient?generalPractitioner.reference=6321f14fd83022001917f14f");
   }
 
   //Méthode GET PATIENT ID (lors du click sur un patient)
-  getIdPatient() {
-    this.http.get(this.BASE_URL + "patient?generalPractitioner.reference=6321f14fd83022001917f14f/id");
-    return ;
+  setPatient(id: any) {
+    localStorage.setItem('currentPatient', id);
+    return this.http.get(this.BASE_URL + "patient/" + id);
+  }
+
+  getCurrentPatient() {
+    return this.http.get(this.BASE_URL + "patient/" + this.currentPatient);
+  }
+
+  //Méthode GET PATIENT ID (lors du click sur un patient)
+  getConditionForCurrentPatient() {
+    return this.http.get(this.BASE_URL + "condition?subject.reference=Patient/" + this.currentPatient);
   }
 
   //Méthode GET événements (pour un patient en particulier) - type CONDITION
-  getEvent(){
+  getEvent() {
     return this.http.get(this.BASE_URL + "condition");
   }
 
