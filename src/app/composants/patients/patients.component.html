@@ -7,7 +7,9 @@
     <ul>
         <!-- Boucle qui affiche les patients en dynamique-->
         <li *ngFor="let pat of patient">
-            {{ pat.name[0].given }} {{ pat.name[0].family }}
+            <button (click)="getPatientFromId(pat.id)">
+                {{ pat.name[0].given }} {{ pat.name[0].family }}
+            </button>
         </li>   
     </ul>
    

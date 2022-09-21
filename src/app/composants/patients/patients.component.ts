@@ -13,7 +13,7 @@ export class PatientsComponent implements OnInit {
   patient: any;
 
   constructor(private donneesService: DonneesService) {
-   }
+  }
 
   ngOnInit(): void {
     this.patient = this.donneesService.getPatients().subscribe((data)  => {
@@ -21,6 +21,11 @@ export class PatientsComponent implements OnInit {
 
       console.log(this.patient);
     });
+  }
+
+  getPatientFromId(id: any) {
+    console.log("idpatient ", id);
+    return id;
   }
 
 }

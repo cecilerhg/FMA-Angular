@@ -30,6 +30,12 @@ export class DonneesService {
     return this.http.get(this.BASE_URL + "patient?generalPractitioner.reference=6321f14fd83022001917f14f");
   }
 
+  //Méthode GET PATIENT ID (lors du click sur un patient)
+  getIdPatient() {
+    this.http.get(this.BASE_URL + "patient?generalPractitioner.reference=6321f14fd83022001917f14f/id");
+    return ;
+  }
+
   //Méthode GET événements (pour un patient en particulier) - type CONDITION
   getEvent(){
     return this.http.get(this.BASE_URL + "condition");
