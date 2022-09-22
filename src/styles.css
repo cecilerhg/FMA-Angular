@@ -35,19 +35,25 @@ background-repeat: no-repeat; */
 
 #card-patient {
     display: flex;
-    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
     background: rgba(255,255,255,0.7);
 }
 
 #card-evenement {
     display: flex;
-    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
     background: rgba(255,255,255,0.7);
 }
 
 #card-observation {
     display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
     width: 50%;
-    margin: 35px 15px 0px 0px;
     background: rgba(255,255,255,0.7);
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { DonneesService } from 'app/services/donnees.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { DonneesService } from 'app/services/donnees.service';
 })
 export class ObservationsComponent implements OnInit {
 
-  constructor(private donneeService : DonneesService) { }
+  constructor(private donneeService : DonneesService, private _snackBar: MatSnackBar) { }
 
   condition = {
     "resourceType": "Condition",
@@ -34,6 +35,7 @@ export class ObservationsComponent implements OnInit {
   creerObservation(){
     this.donneeService.postObservations(this.condition).subscribe(data =>{
       console.log("envoyé",data);
+      this._snackBar.open("Observation envoyée", "Fermer");
     });
   }
 
