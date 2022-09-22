@@ -9,7 +9,7 @@
         <div *ngFor="let condition of conditions">
             <ul>
                 <div *ngIf="condition.recordedDate && condition.code && condition.code.coding && condition.note"
-                    style="margin-bottom: 10px;">
+                    style="margin-bottom: 10px; color: #03045E ;">
                     <li>
                         <strong> Evénement reporté le : </strong> {{ condition.recordedDate }}.
                         <strong>Incident : </strong>{{ condition.code.coding[0].display }}.
@@ -19,7 +19,7 @@
             </ul>
         </div>
         <div *ngIf="!conditions || conditions.length == 0">
-            <p style="color: #1232ab ;">Pas de d'événements à déclarer pour le patient sélectionné !</p>
+            <p style="color: #03045E ;">Pas de d'événements à déclarer pour le patient sélectionné !</p>
         </div>
     </div>
 

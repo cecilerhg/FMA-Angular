@@ -11,7 +11,7 @@
                     <mat-select>
                         <mat-option *ngFor="let pat of patients" [value]="pat.name[0].given + pat.name[0].family"
                             (click)="selectPatient(pat.id)">
-                            {{ pat.name[0].given }} {{ pat.name[0].family }}
+                            {{ pat.name[0].given }} {{ pat.name[0].family }} né le {{pat.birthDate}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
