@@ -1,23 +1,28 @@
-<mat-card  id="card-evenement">
-<div id="event">
+<mat-card id="card-evenement">
+    <div id="event">
 
 
 
-</div>
-<div *ngIf="conditions">
-    <h1>Evénements</h1>
-    <div *ngFor="let condition of conditions">
-        <div *ngIf="condition.recordedDate && condition.code && condition.code.coding && condition.note">
-            Evénement reporté le : {{ condition.recordedDate }}.
-            Incident : {{ condition.code.coding[0].display }}.
-            Notes supplémentaires : {{ condition.note[0].text }}
+    </div>
+    <div *ngIf="conditions">
+        <h1>Evénements</h1>
+        <div *ngFor="let condition of conditions">
+            <ul>
+                <div *ngIf="condition.recordedDate && condition.code && condition.code.coding && condition.note"
+                    style="margin-bottom: 10px;">
+                    <li>
+                        <strong> Evénement reporté le : </strong> {{ condition.recordedDate }}.
+                        <strong>Incident : </strong>{{ condition.code.coding[0].display }}.
+                        <strong>Notes supplémentaires : </strong> {{ condition.note[0].text }}
+                    </li>
+                </div>
+            </ul>
+        </div>
+        <div *ngIf="!conditions || conditions.length == 0">
+            Pas de d'événements pour le patient sélectionné !
         </div>
     </div>
-    <div *ngIf="!conditions || conditions.length == 0">
-        Pas de d'événements pour le patient sélectionné !
-    </div>
-</div>
 
 
-<img id="img" height="250px" src="../../../assets/docteur-event.jpg">
+    <img id="img" height="250px" src="../../../assets/docteur-event.jpg">
 </mat-card>
