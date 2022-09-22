@@ -1,10 +1,11 @@
 <mat-card  id="card-evenement">
 <div id="event">
 
-<h1>Module événements</h1>
+
 
 </div>
 <div *ngIf="conditions">
+    <h1>Evénements</h1>
     <div *ngFor="let condition of conditions">
         <div *ngIf="condition.recordedDate && condition.code && condition.code.coding && condition.note">
             Evénement reporté le : {{ condition.recordedDate }}.
@@ -12,10 +13,11 @@
             Notes supplémentaires : {{ condition.note[0].text }}
         </div>
     </div>
+    <div *ngIf="!conditions || conditions.length == 0">
+        Pas de d'événements pour le patient sélectionné !
+    </div>
 </div>
 
-<div *ngIf="!conditions || conditions.length == 0">
-    Pas de d'événements pour le patient sélectionné !
-</div>
+
 <img id="img" height="250px" src="../../../assets/docteur-event.jpg">
 </mat-card>
